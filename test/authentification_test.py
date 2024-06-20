@@ -9,6 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 class TestLoginLogout(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        chromedriver_path = "/home/ghislin/chrome-linux64/"
+
         # Configure WebDriver avec les options
         chrome_options = Options()
         chrome_options.add_argument("--start-maximized")
