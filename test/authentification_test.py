@@ -17,9 +17,13 @@ class TestLoginLogout(unittest.TestCase):
         # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-
-        # Initialize WebDriver
-        cls.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        chrome_driver_version = '114.0.5735.90'  # Replace with your Chrome version
+        
+        # Initialize WebDriver with the specified version
+        cls.driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager(version=chrome_driver_version).install()), 
+            options=chrome_options
+        )
 
         # Open the login page
         cls.driver.get("https://pay.kagoservices.com/")
