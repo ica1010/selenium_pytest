@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.chrome.service import Service as ChromeService
 class TestLoginLogout(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -20,11 +21,7 @@ class TestLoginLogout(unittest.TestCase):
         chrome_driver_version = '114.0.5735.90'  # Replace with your Chrome version
         
         # Initialize WebDriver with the specified version
-        cls.driver = webdriver.Chrome(
-            service=Service(ChromeDriverManager(version=chrome_driver_version).install()), 
-            options=chrome_options
-        )
-
+        cls.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager(driver_version='126.0.6478.114').install()), options=chrome_options)
         # Open the login page
         cls.driver.get("https://pay.kagoservices.com/")
 
