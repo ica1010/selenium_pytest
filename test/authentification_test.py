@@ -19,7 +19,7 @@ class TestLoginLogout(unittest.TestCase):
         chrome_options.add_argument('--disable-dev-shm-usage')
 
         # Initialiser le WebDriver avec le service et les options
-        cls.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        cls.driver = webdriver.Chrome(options=chrome_options)
 
         # Ouvrir la page de connexion
         cls.driver.get("https://pay.kagoservices.com/")
