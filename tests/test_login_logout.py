@@ -8,7 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
-from pages.login_page import loginPage
+from pages.login_page import LoginPage
 import os
 
 
@@ -40,7 +40,7 @@ class TestLoginLogout(unittest.TestCase):
         cls.logger.info('Closed the browser.')
 
     def test_login_logout(self):
-        login_page = loginPage(self.driver)
+        login_page = LoginPage(self.driver)
         logout_page = LogoutPage(self.driver)
 
         login_page.go_to_page()
